@@ -6,6 +6,8 @@ if opcion == "D":
     #Solicitamos la fila y la columna a destapar
     fila = int(input("Ingrese la fila : "))
     columna = int(input("Ingrese la columna : "))
+
+    
  
 
 
