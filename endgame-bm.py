@@ -7,6 +7,4 @@ if juego_en_curso:
                 print ("*", end = " ")
             else:
                 print (visible[i][j], end = " ")
-            print()
-
-              
+            print()    
