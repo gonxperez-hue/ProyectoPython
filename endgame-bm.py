@@ -8,4 +8,5 @@ if juego_en_curso:
             else:
                 print (visible[i][j], end = " ")
            
+            #ESTE PRINT ESTA MAL UBICADO, AHORA MISMO ESTA HACIENDO UN SALTO DE LINEA POR CADA CELDA
             print()    
