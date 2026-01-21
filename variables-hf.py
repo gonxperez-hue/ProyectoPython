@@ -1,3 +1,4 @@
+from curses import assume_default_colors
 import random
 
 #Declaramos variables globales para el juego 
@@ -13,3 +14,6 @@ DISPAROS_INICIALES = 10
 CANTIDAD_BARCOS_INICIALES = 8
 JUGADOR_1 = "J1"
 JUGADOR_2 = "J2"
+
+
+
