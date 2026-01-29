@@ -18,7 +18,6 @@ def tablero_vacio(filas, columnas):
         tablero.append(fila) #Añade la fila al tablero
     return tablero
 
-print(tablero_vacio(6, 6)) #Esto es temporal, solo para ver que funciona el tablero 
 
 # Esto va a generar el tablero que si va a ver el ususario.
 # En este tablero es donde van a estar todas las casillas ocultas
@@ -30,7 +29,6 @@ def hacer_tablero_visible(filas, columnas):
         tablero.append(fila)
     return tablero
 
-#Esto también es temporal es solo para comprobar que todo funciona
 
 tablero_visible = hacer_tablero_visible(6,6)
 
@@ -48,6 +46,8 @@ def mostrar_tablero(tablero_visible):
     
     for fila in range(filas):
         print(fila, end=" ")
-    print()
-    
+        for j in range(columnas):
+            print(tablero_visible[fila][j], end=" ")
+        print()
+        
 #Esto es todo el código del tablero, ahora tenemmos que integrar las funciones de las minas con este codigo y ver que todo funcione
