@@ -9,6 +9,7 @@ def elegir_dificultad():
     print("Elige dificultad:")
     print("1. Fácil (3 minas)")
     print("2. Medio (5 minas)")
+    print("3. Difícil (8 minas)")
 
     opcion = input("Opción: ")
 
@@ -16,6 +17,8 @@ def elegir_dificultad():
         return 3   # Modo Fácil
     elif opcion == "2":
         return 5   # Modo Medio
+    elif opcion == "3":
+        return 8   # Modo Difícil
     else:
         print("Opción no válida, se usará modo fácil.")
         return 3
