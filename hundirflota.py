@@ -162,7 +162,29 @@ class Tablero:
             # Impacto directo: marcar casilla como tocada
             self.cuadricula[fila][col] = 'X'
             
-        
+            # Buscar qué barco fue impactado
+            for barco in self.barcos:
+                if (fila, col) in barco.posiciones:
+                    barco.impactos += 1  # Registrar impacto en el barco
+                
+                    # Si el barco ya tiene todos sus impactos, está hundido
+                    if barco.esta_hundido():
+                        return "hundido", barco.nombre
+                    return "tocado", None  # Solo tocado, no hundido
+                    
+        elif self.cuadricula[fila][col] == '~':
+            # Disparo al agua: marcar casilla
+            self.cuadricula[fila][col] = 'O'
+            return "agua", None
+        else:
+            # Ya se había disparado en esta casilla antes
+            return "repetido", None
+    
+    def todos_hundidos(self):
+        """
+        Verifica si todos los barcos del tablero están hundidos
+        """
+        return all(barco.esta_hundido() for barco in self.barcos)  # True si no queda ninguno
 
 
 
