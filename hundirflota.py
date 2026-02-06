@@ -140,6 +140,29 @@ class Tablero:
             colocado = False                 # Controla si se colocó
             intentos = 0                     # Contador de intentos
 
+            # Intentar colocar el barco hasta 100 veces
+            while not colocado and intentos < 100:
+                # Generar posición aleatoria dentro del tablero
+                fila = random.randint(0, self.tamaño - 1)
+                col = random.randint(0, self.tamaño - 1)
+                horizontal = random.choice([True, False])  # Orientación aleatoria
+                
+                # Si la posición es válida, colocar el barco
+                if self.puede_colocar_barco(fila, col, longitud, horizontal):
+                    self.colocar_barco(barco, fila, col, horizontal)
+                    colocado = True  # Barco colocado con éxito
+                
+                intentos += 1  # Aumentar contador de intentos
+    
+    def recibir_disparo(self, fila, col):
+        """
+        Procesa un disparo en el tablero y actualiza el estado
+        """
+        if self.cuadricula[fila][col] == 'B':
+            # Impacto directo: marcar casilla como tocada
+            self.cuadricula[fila][col] = 'X'
+            
+        
 
 
 
