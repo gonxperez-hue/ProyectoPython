@@ -75,66 +75,44 @@ def obtener_e_imprimir_barcos (matriz, cantidad_barcos, jugador):
 # ============================================================================
 # CLASE TABLERO - PARTE 2 (continuación)
 # ============================================================================
-# Estos métodos gestionan la lógica de colocación de barcos y disparos
+# Métodos que controlan la colocación de barcos y los disparos
 
 class Tablero:
     """Continuación de la clase Tablero - Métodos de juego"""
     
     def puede_colocar_barco(self, fila, col, longitud, horizontal):
         """
-        Verifica si se puede colocar un barco en una posición específica
-        Comprueba que:
-        1. No se salga del tablero
-        2. No haya otro barco en las casillas
-        3. No haya barcos adyacentes (diagonal incluida)
-        
-        Args:
-            fila (int): Fila inicial
-            col (int): Columna inicial
-            longitud (int): Longitud del barco
-            horizontal (bool): True si es horizontal, False si es vertical
-        
-        Returns:
-            bool: True si se puede colocar, False si no
+        Verifica si un barco puede colocarse en la posición indicada
         """
         if horizontal:
-            # Verificar que no se salga del tablero horizontalmente
+            # Evita que el barco salga del tablero horizontalmente
             if col + longitud > self.tamaño:
                 return False
             
-            # Verificar espacio y casillas adyacentes (incluye diagonales)
-            # Esto evita que los barcos se toquen
+            # Revisa casillas ocupadas o adyacentes (incluye diagonales)
             for c in range(max(0, col - 1), min(self.tamaño, col + longitud + 1)):
                 for r in range(max(0, fila - 1), min(self.tamaño, fila + 2)):
-                    if self.cuadricula[r][c] == 'B':
+                    if self.cuadricula[r][c] == 'B':  # Detecta otro barco
                         return False
         else:
-            # Verificar que no se salga del tablero verticalmente
+            # Evita que el barco salga del tablero verticalmente
             if fila + longitud > self.tamaño:
                 return False
             
-            # Verificar espacio y casillas adyacentes
+            # Revisa casillas ocupadas o adyacentes
             for r in range(max(0, fila - 1), min(self.tamaño, fila + longitud + 1)):
                 for c in range(max(0, col - 1), min(self.tamaño, col + 2)):
-                    if self.cuadricula[r][c] == 'B':
+                    if self.cuadricula[r][c] == 'B':  # Detecta otro barco
                         return False
-        return True
+        
+        return True  # Todo correcto, se puede colocar
     
     def colocar_barco(self, barco, fila, col, horizontal):
         """
-        Coloca un barco en el tablero en la posición especificada
-        Marca las casillas con 'B' y guarda las posiciones en el objeto barco
-        
-        Args:
-            barco (Barco): Objeto barco a colocar
-            fila (int): Fila inicial
-            col (int): Columna inicial
-            horizontal (bool): Orientación del barco
-        
-        Returns:
-            bool: True si se colocó correctamente
+        Coloca un barco en el tablero y registra sus posiciones
         """
-        posiciones = []
+        posiciones = []  # Guarda las coordenadas del barco
+
 
 
 
