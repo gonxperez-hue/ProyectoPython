@@ -114,6 +114,31 @@ class Tablero:
         posiciones = []  # Guarda las coordenadas del barco
 
 
+        if horizontal:
+            # Colocar barco horizontalmente (misma fila, columnas seguidas)
+            for i in range(barco.longitud):
+                self.cuadricula[fila][col + i] = 'B'   # Marca casilla como barco
+                posiciones.append((fila, col + i))    # Guarda coordenada
+        else:
+            # Colocar barco verticalmente (misma columna, filas seguidas)
+            for i in range(barco.longitud):
+                self.cuadricula[fila + i][col] = 'B'  # Marca casilla como barco
+                posiciones.append((fila + i, col))    # Guarda coordenada
+        
+        # Registrar posiciones en el objeto barco
+        barco.posiciones = posiciones
+        # Añadir barco a la lista del tablero
+        self.barcos.append(barco)
+        return True  # Colocación exitosa
+    
+    def colocar_barcos_aleatorio(self, lista_barcos):
+        """
+        Coloca todos los barcos de forma aleatoria en el tablero
+        """
+        for nombre, longitud in lista_barcos:
+            barco = Barco(nombre, longitud)  # Crear barco
+            colocado = False                 # Controla si se colocó
+            intentos = 0                     # Contador de intentos
 
 
 
