@@ -1,4 +1,5 @@
 import random
+import os
 
 #Declaramos variables globales para el juego 
 FILAS = 9
