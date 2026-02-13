@@ -55,12 +55,15 @@ def obtener_e_imprimir_barcos (matriz, cantidad_barcos, jugador):
     matriz = colocar_barcos_de_una_celda(barcos_una_celda, SUBMARINO, matriz)
     return matriz
 
+#Funciones para colocar los barcos en la matriz de forma aleatoria
 def obtener_x_aleatoria():
     return random.randint(0, COLUMNAS -1)
 
+#Misma función que la anterior pero para la fila (y) en vez de la columna (x)
 def obtener_y_aleatoria():
     return random.randint(0, FILAS -1)
 
+#Función para colocar barcos de una celda 
 def colocar_barcos_de_una_celda(cantidad, tipo_barco, matriz):
     barcos_colocados = 0
     while True:
@@ -73,6 +76,7 @@ def colocar_barcos_de_una_celda(cantidad, tipo_barco, matriz):
                 break
     return matriz
 
+#Función para colocar barcos de dos celdas en horizontal
 def colocar_barcos_de_dos_celdas_horizontal(cantidad, tipo_barco, matriz):
     barcos_colocados = 0
     while True:
@@ -87,6 +91,7 @@ def colocar_barcos_de_dos_celdas_horizontal(cantidad, tipo_barco, matriz):
                 break
     return matriz
 
+#Función para colocar barcos de dos celdas en vertical
 def colocar_barcos_de_dos_celdas_vertical(cantidad, tipo_barco, matriz):
     barcos_colocados = 0
     while True:
@@ -101,6 +106,7 @@ def colocar_barcos_de_dos_celdas_vertical(cantidad, tipo_barco, matriz):
                 break
     return matriz
 
+#Función para imprimir los disparos restantes de cada jugador
 def imprimir_disparos_restantes (disparos_restantes, jugador):
     print (f"Disparos restantes de {jugador}: {disparos_restantes}")
         
