@@ -64,4 +64,4 @@ def calcular_numeros(tablero):
             if f < filas - 1 and c < columnas - 1 and tablero[f+1][c+1] == "M":
                 contador += 1
 
-            tablero[f][c] = str(contador),
+            tablero[f][c] = str(contador)
