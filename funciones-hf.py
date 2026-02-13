@@ -55,6 +55,28 @@ def obtener_e_imprimir_barcos (matriz, cantidad_barcos, jugador):
     matriz = colocar_barcos_de_una_celda(barcos_una_celda, SUBMARINO, matriz)
     return matriz
 
+def obtener_x_aleatoria():
+    return random.randint(0, COLUMNAS -1)
+
+def obtener_y_aleatoria():
+    return random.randint(0, FILAS -1)
+
+def colocar_barcos_de_una_celda(cantidad, tipo_barco, matriz):
+    barcos_colocados = 0
+    while True:
+        x = obtener_x_aleatoria()
+        y = obtener_y_aleatoria()
+        if es_mar(x, y, matriz):
+            matriz[y][x] = tipo_barco
+            barcos_colocados += 1
+            if barcos_colocados >= cantidad:
+                break
+    return matriz
+
+
+
+
+
 
 
 
