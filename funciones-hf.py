@@ -73,6 +73,20 @@ def colocar_barcos_de_una_celda(cantidad, tipo_barco, matriz):
                 break
     return matriz
 
+def colocar_barcos_de_dos_celdas_horizontal(cantidad, tipo_barco, matriz):
+    barcos_colocados = 0
+    while True:
+        x = obtener_x_aleatoria()
+        y = obtener_y_aleatoria()
+        x2 = x + 1
+        if coordenada_en_rango(x, y) and coordenada_en_rango(x2, y) and es_mar(x, y, matriz) and es_mar(x2, y, matriz):
+            matriz[y][x] = tipo_barco
+            matriz[y][x2] = tipo_barco
+            barcos_colocados += 1
+            if barcos_colocados >= cantidad:
+                break
+    return matriz
+
 
 
 
