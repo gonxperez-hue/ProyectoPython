@@ -8,5 +8,5 @@ Trabajo realizado por:
 - Gonzalo Perez
 - Adolfo Delgado
 - Hugo Sanchez
-- ErBarto
+- Juan Ramón
 - Pablo Busto
