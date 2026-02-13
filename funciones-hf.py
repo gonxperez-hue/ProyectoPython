@@ -99,7 +99,13 @@ def colocar_barcos_de_dos_celdas_vertical(cantidad, tipo_barco, matriz):
             barcos_colocados += 1
             if barcos_colocados >= cantidad:
                 break
-    return matriz  
+    return matriz
+
+def imprimir_disparos_restantes (disparos_restantes, jugador):
+    print (f"Disparos restantes de {jugador}: {disparos_restantes}")
+        
+
+
 
 
 
