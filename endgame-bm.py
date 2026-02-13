@@ -43,6 +43,7 @@ if juego_en_curso:
             else:
                 print (visible[i][j], end = " ")
         print()
+    
 
 
 
