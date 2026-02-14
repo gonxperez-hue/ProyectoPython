@@ -54,3 +54,32 @@ class Tablero:
         self.barcos = []  # Lista de barcos colocados en este tablero
         # Cuadrícula para registrar disparos realizados
         self.disparos = [['~' for _ in range(tamaño)] for _ in range(tamaño)]
+
+    def mostrar_tablero(self, ocultar_barcos=False):
+        """
+        Muestra el tablero en consola con formato visual
+        
+        Args:
+            ocultar_barcos: Si True, oculta las posiciones de los barcos
+                                   (usado para mostrar el tablero enemigo)
+        
+        Formato:
+        - Letras (A-J) para columnas
+        - Números (0-9) para filas
+        - 'B' = Barco, 'X' = Tocado, 'O' = Agua, '~' = No explorado
+        """
+        # Mostrar letras de columnas (A, B, C, ...)
+        print("\n   " + " ".join([chr(65 + i) for i in range(self.tamaño)]))
+        print("  +" + "-" * (self.tamaño * 2 - 1) + "+")
+        
+        # Mostrar cada fila con su número
+        for i in range(self.tamaño):
+            fila = f"{i:2}|"  # Número de fila con formato
+            for j in range(self.tamaño):
+                # Si se deben ocultar barcos y hay un barco, mostrar agua
+                if ocultar_barcos and self.cuadricula[i][j] == 'B':
+                    fila += "~ "
+                else:
+                    fila += self.cuadricula[i][j] + " "
+            print(fila + "|")
+        print("  +" + "-" * (self.tamaño * 2 - 1) + "+")
