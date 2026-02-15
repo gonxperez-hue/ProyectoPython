@@ -83,3 +83,23 @@ class Tablero:
                     fila += self.cuadricula[i][j] + " "
             print(fila + "|")
         print("  +" + "-" * (self.tamaño * 2 - 1) + "+")
+
+    def mostrar_disparos(self):
+        """
+        Muestra el tablero de disparos realizados
+        Útil para que el jugador vea dónde ha disparado anteriormente
+        
+        Símbolos:
+        - '~' = No disparado
+        - 'X' = Impacto en barco
+        - 'O' = Agua (fallo)
+        """
+        print("\n   " + " ".join([chr(65 + i) for i in range(self.tamaño)]))
+        print("  +" + "-" * (self.tamaño * 2 - 1) + "+")
+        
+        for i in range(self.tamaño):
+            fila = f"{i:2}|"
+            for j in range(self.tamaño):
+                fila += self.disparos[i][j] + " "
+            print(fila + "|")
+        print("  +" + "-" * (self.tamaño * 2 - 1) + "+")
