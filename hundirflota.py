@@ -20,7 +20,7 @@ class Barco:
 
 
 # ============================================================================
-# PARTE DE HUGO Y PABLO: CLASE TABLERO FUSIONADA
+# PARTE DE HUGO Y Abelardo: CLASE TABLERO FUSIONADA
 # ============================================================================
 class Tablero:
     """Representa el tablero de juego"""
@@ -57,7 +57,7 @@ class Tablero:
             print(fila + "|")
         print("  +" + "-" * (self.tamaño * 2 - 1) + "+")
 
-    # --- Métodos de Lógica (Pablo) ---
+    # --- Métodos de Lógica (Abelardo) ---
     def puede_colocar_barco(self, fila, col, longitud, horizontal):
         if horizontal:
             if col + longitud > self.tamaño:
@@ -124,7 +124,7 @@ class Tablero:
 
 
 # ============================================================================
-# PARTE DE ABELARDO: CLASE PRINCIPAL DEL JUEGO
+# PARTE DE Pablo: CLASE PRINCIPAL DEL JUEGO
 # ============================================================================
 class JuegoHundirFlota:
     """Clase principal del juego Hundir la Flota"""
