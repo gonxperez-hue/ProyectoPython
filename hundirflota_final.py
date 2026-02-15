@@ -205,13 +205,13 @@ class JuegoHundirFlota:
             
             if resultado == "tocado":
                 self.tablero_jugador.disparos[fila][col] = 'X'
-                print("\n¡TOCADO! 🎯")
+                print("\nTocado")
             elif resultado == "hundido":
                 self.tablero_jugador.disparos[fila][col] = 'X'
-                print(f"\n¡HUNDIDO! ⚓ Has hundido el {barco_nombre}")
+                print(f"\nHas hundido el {barco_nombre}")
             elif resultado == "agua":
                 self.tablero_jugador.disparos[fila][col] = 'O'
-                print("\nAgua... 💧")
+                print("\nAgua")
             
             time.sleep(2)
             break
@@ -238,7 +238,7 @@ class JuegoHundirFlota:
         coord_str = f"{chr(65 + col)}{fila}"
         
         if resultado == "tocado":
-            print(f"La CPU disparó en {coord_str}: ¡TOCADO! 💥")
+            print(f"La CPU disparó en {coord_str}: Tocado")
             self.ultimo_impacto_cpu = (fila, col)
             # Añadir casillas adyacentes para explorar
             for df, dc in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
@@ -278,7 +278,7 @@ class JuegoHundirFlota:
             if self.tablero_cpu.todos_hundidos():
                 self.mostrar_estado_juego()
                 print("\n" + "=" * 50)
-                print("     ¡FELICIDADES! ¡HAS GANADO! 🏆")
+                print("     HAS GANADO")
                 print("=" * 50)
                 break
             
@@ -287,7 +287,7 @@ class JuegoHundirFlota:
             if self.tablero_jugador.todos_hundidos():
                 self.mostrar_estado_juego()
                 print("\n" + "=" * 50)
-                print("     LA COMPUTADORA HA GANADO 😢")
+                print("     HAS PERDIDO")
                 print("=" * 50)
                 break
 
